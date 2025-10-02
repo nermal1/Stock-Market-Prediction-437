@@ -11,8 +11,8 @@ Project for Machine Learning and Soft Computing CS437. We are going to be predic
 
   <tr>
     <th>Indices</th>
-    <td>S&P 500 (INX)</td>
-    <td>Dow Jones (DJI)</td>
+    <td>S&P 500 (^GSPC)</td>
+    <td>Dow Jones (^DJI)</td>
   </tr>
 </table>
 
