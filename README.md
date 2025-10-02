@@ -17,3 +17,5 @@ Project for Machine Learning and Soft Computing CS437. We are going to be predic
 </table>
 
 <p>These stocks and indices are chosen as they allow us to maximize relevance by mirroring the original paper's goals by testing on highly liquid, market leading components of major indices, while encompassing technology and industrial scale operations. The S&P 500 and Dow Jones are considered two of the most fundemental barometers of the US economy and stock market. Microsoft allows us to see into the tech sector while Amazon allows us to have a conglomerate diversification.</p>
+
+<p>To run the .ipynb files you must pip install everything on the requirements.txt page<p>
