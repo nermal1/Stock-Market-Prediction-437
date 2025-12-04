@@ -257,17 +257,17 @@
 					\caption{Random Forest, predicting next days' price}
 				\end{table}
 				
-				\paragraph{} For ANN, shown in table 12, we must also loop through epochs, momentum, and hidden layers. Hidden layer possibilities are 10, 50, or 100.  Momentum possibilities are 0.3, 0.6, or 0.9. Epoch possibilities are 1000 or 2000. Learning rate was kept constant at 0.1. 
+				\paragraph{} For ANN, shown in table 12, we must also loop through epochs, momentum, and neuron counts. There are 3 hidden layers and then the possibilities for neuron counts are 10, 50, or 100.  Momentum possibilities are 0.3, 0.6, or 0.9. Epoch possibilities are 1000 or 2000. Learning rate was kept constant at 0.1. 
 				
 				\begin{table}[h]
 					\centering
 					\begin{tabular}{l|l|l|l|l|l|l|l|l|}
 						\cline{2-9}
 						& Features                                                                                & Hidden Layers & Epochs & Momen. & Acc. \% & Prec. & Recall & F1 Score \\ \hline
-						\multicolumn{1}{|l|}{AAPL} & \begin{tabular}[c]{@{}l@{}}Momentum\_10\\ Lag\_1\\ Lag\_2\end{tabular}                  & 100           & 1000   & 0.6      & 65.79         & 0.6624    & 0.7675 & 0.7111   \\ \hline
-						\multicolumn{1}{|l|}{MSFT} & \begin{tabular}[c]{@{}l@{}}Momentum\_10\\ Volatility\_14\\ Lag\_2\\ Lag\_5\end{tabular} & 10            & 1000   & 0.9      & 65.18         & 0.6646    & 0.7786 & 0.7171   \\ \hline
-						\multicolumn{1}{|l|}{GSPC} & \begin{tabular}[c]{@{}l@{}}Momentum\_10\\ Lag\_1\\ Lag\_2\\ Lag\_5\end{tabular}         & 100           & 1000   & 0.9      & 64.98         & 0.6490    & 0.8029 & 0.7178   \\ \hline
-						\multicolumn{1}{|l|}{DJI}  & \begin{tabular}[c]{@{}l@{}}Momentum\_10\\ Lag\_1\\ Lag\_2\\ Lag\_5\end{tabular}         & 10            & 1000   & 0.3      & 66.40         & 0.6699    & 0.7684 & 0.7158   \\ \hline
+						\multicolumn{1}{|l|}{AAPL} & \begin{tabular}[c]{@{}l@{}}Momentum\_10\\ Lag\_1\\ Lag\_2\end{tabular}                  & 100           & 1000   & 0.6      & 67.00         & 0.6788    & 0.7565 & 0.7155   \\ \hline
+						\multicolumn{1}{|l|}{MSFT} & \begin{tabular}[c]{@{}l@{}}Momentum\_10\\ Volatility\_14\\ Lag\_2\\ Lag\_5\end{tabular} & 10            & 1000   & 0.      & 66.40         & 0.6815    & 0.7643 & 0.7205   \\ \hline
+						\multicolumn{1}{|l|}{GSPC} & \begin{tabular}[c]{@{}l@{}}Momentum\_10\\ Lag\_1\\ Lag\_2\\ Lag\_5\end{tabular}         & 50           & 1000   & 0.6      & 65.79         & 0.6522    & 0.8212 & 0.7270   \\ \hline
+						\multicolumn{1}{|l|}{DJI}  & \begin{tabular}[c]{@{}l@{}}Momentum\_10\\ Lag\_1\\ Lag\_2\\ Lag\_5\end{tabular}         & 100            & 1000   & 0.6      & 65.18         & 0.6553    & 0.7757 & 0.7104   \\ \hline
 					\end{tabular}
 					\caption{ANN, predicting next day's price}
 				\end{table}
@@ -280,15 +280,15 @@
 					\begin{tabular}{l|l|l|l|l|l|l|}
 						\cline{2-7}
 						& Meta Learner                                                  & Accuracy (\%) & Precision & Recall & F1 Score & Success or Failure \\ \hline
-						\multicolumn{1}{|l|}{AAPL} & \begin{tabular}[c]{@{}l@{}}Logistic\\ Regression\end{tabular} & 65.59         & 0.6554    & 0.7860 & 0.7148   & Failure            \\ \hline
-						\multicolumn{1}{|l|}{MSFT} & Random Forest                                                 & 67.41         & 0.6854    & 0.7857 & 0.7321   & Success            \\ \hline
-						\multicolumn{1}{|l|}{GSPC} & \begin{tabular}[c]{@{}l@{}}Logistic\\ Regression\end{tabular} & 64.37         & 0.6494    & 0.7774 & 0.7076   & Failure            \\ \hline
-						\multicolumn{1}{|l|}{DJI}  & \begin{tabular}[c]{@{}l@{}}Logistic\\ Regression\end{tabular} & 65.38         & 0.6593    & 0.7684 & 0.7097   & Failure            \\ \hline
+						\multicolumn{1}{|l|}{AAPL} & \begin{tabular}[c]{@{}l@{}}Logistic\\ Regression\end{tabular} & 64.98         & 0.6541    & 0.7675 & 0.7063   & Failure            \\ \hline
+						\multicolumn{1}{|l|}{MSFT} & Random Forest                                                 & 63.38         & 0.6627    & 0.7929 & 0.7220   & Failure            \\ \hline
+						\multicolumn{1}{|l|}{GSPC} & \begin{tabular}[c]{@{}l@{}}Logistic\\ Regression\end{tabular} & 65.79         & 0.6504    & 0.8285 & 0.7287   & Failure            \\ \hline
+						\multicolumn{1}{|l|}{DJI}  & \begin{tabular}[c]{@{}l@{}}Logistic\\ Regression\end{tabular} & 65.79         & 0.6656    & 0.7610 & 0.7101   & Success            \\ \hline
 					\end{tabular}
 					\caption{Implementing the stacked model}
 				\end{table}
 				
-				\paragraph{} We can see that Microsoft (MSFT) was the only ticker to perform better with the stacked model than just the initial single model. This bump of 2.23 \% gives MSFT a success in Table 13. The other 3 tickers performed best with just the plain ANN model. Another item of note in Table 13 is the increased recall across the board. This increased recall means that the model will be more successful in predicting up trends, therefore this could result in more often "losing". Losing refers to buying stock that is predicted to go up, but then the stock does not behave as predicted.  
+				\paragraph{} We can see that Dow Jones Index (DJI) was the only ticker to perform better with the stacked model than just the initial single model. This bump of 0.61 \% is small but, gives DJI a success in Table 13. The other 3 tickers performed best with just the plain ANN model. Another item of note in Table 13 is the increased recall across the board. This increased recall means that the model will be more successful in predicting up trends, therefore this could result in more often "losing". Losing refers to buying stock that is predicted to go up, but then the stock does not behave as predicted.  
 			
 	
 	\section{Result Analysis}
